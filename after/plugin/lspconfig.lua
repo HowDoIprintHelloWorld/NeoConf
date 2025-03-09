@@ -28,6 +28,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 lspconfig.pyright.setup{}
 lspconfig.lua_ls.setup({})
 lspconfig.marksman.setup{}
+lspconfig.cssls.setup{} -- vscode-css-languageserver
+lspconfig.denols.setup{} -- deno
+lspconfig.html.setup{filetypes={"html", "htmldjango"}} -- vscode-html-languageserver
 
 
 
