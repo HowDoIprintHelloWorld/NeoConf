@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
 
 	use 'folke/tokyonight.nvim'
 
+  use 'sbdchd/neoformat'
+
 	use({
 	  "nvim-neo-tree/neo-tree.nvim",
 	  branch = "v3.x",
@@ -42,15 +44,19 @@ return require('packer').startup(function(use)
         end
     }
 
-    use 'neovim/nvim-lspconfig'
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        requires = {
-            'neovim/nvim-lspconfig',
-            'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer'
-        }
-    }
+  use {
+      "williamboman/mason.nvim"
+  }
+
+  use 'neovim/nvim-lspconfig'
+  use {
+      'VonHeikemen/lsp-zero.nvim',
+      requires = {
+          'neovim/nvim-lspconfig',
+          'hrsh7th/nvim-cmp',
+          'hrsh7th/cmp-nvim-lsp',
+          'hrsh7th/cmp-buffer'
+      }
+  }
 end)
 

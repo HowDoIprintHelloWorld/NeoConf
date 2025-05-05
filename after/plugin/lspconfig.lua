@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
     local opts = {buffer = event.buf}
-
+  
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
@@ -25,10 +25,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 
+vim.g.neoformat_enabled_python = {'prettier'}
+vim.g.neoformat_virtual_text = true
+-- vim.g.neoformat_verbose = 1
+
+
 lspconfig.pyright.setup{}
 lspconfig.lua_ls.setup({})
 lspconfig.marksman.setup{}
 lspconfig.cssls.setup{} -- vscode-css-languageserver
+-- lspconfig.eslint.setup{}
+vim.lsp.enable('eslint')
+vim.lsp.enable('ts_ls')
 lspconfig.denols.setup{} -- deno
 lspconfig.html.setup{filetypes={"html", "htmldjango"}} -- vscode-html-languageserver
 
@@ -37,6 +45,11 @@ lspconfig.html.setup{filetypes={"html", "htmldjango"}} -- vscode-html-languagese
 vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = {'*.py'},
     command = 'Black',
+})
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = {'*.js', '*.ts', '*.tsx'},
+  command = 'Neoformat prettier',
 })
 
 

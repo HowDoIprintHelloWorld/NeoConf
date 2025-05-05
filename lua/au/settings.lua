@@ -16,3 +16,6 @@ vim.opt.wrap = true
 
 vim.g.mapleader = " "
 
+vim.diagnostic.config({
+  virtual_text = true;
+})
