@@ -34,6 +34,7 @@ lspconfig.pyright.setup{}
 lspconfig.lua_ls.setup({})
 lspconfig.marksman.setup{}
 lspconfig.cssls.setup{} -- vscode-css-languageserver
+vim.lsp.enable("jdtls")
 -- lspconfig.eslint.setup{}
 vim.lsp.enable('eslint')
 vim.lsp.enable('ts_ls')
