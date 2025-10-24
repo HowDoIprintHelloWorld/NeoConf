@@ -67,5 +67,7 @@ return require('packer').startup(function(use)
       "hrsh7th/nvim-cmp"
     },
   })
+
+  use 'mfussenegger/nvim-jdtls'
 end)
 

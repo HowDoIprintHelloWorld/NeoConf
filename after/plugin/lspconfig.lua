@@ -30,6 +30,8 @@ vim.lsp.enable('marksman')
 
 vim.lsp.enable('cssls')
 
+vim.lsp.enable("jdtls")
+-- lspconfig.eslint.setup{}
 vim.lsp.enable('eslint')
 
 vim.lsp.enable('eslint-lsp')
