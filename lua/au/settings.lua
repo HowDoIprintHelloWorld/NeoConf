@@ -14,6 +14,8 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = true
 
+vim.opt.conceallevel = 1
+
 vim.g.mapleader = " "
 
 vim.diagnostic.config({

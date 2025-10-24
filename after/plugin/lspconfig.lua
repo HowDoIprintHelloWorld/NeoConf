@@ -1,13 +1,5 @@
 
 vim.opt.signcolumn = 'yes' -- Avoids layout shifts
-local lspconfig = require('lspconfig')
-local lspconfig_defaults = require('lspconfig').util.default_config
-
-lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-    'force',
-    lspconfig_defaults.capabilities,
-    require('cmp_nvim_lsp').default_capabilities()
-)
 
 
 -- This is where you enable features that only work
@@ -30,15 +22,27 @@ vim.g.neoformat_virtual_text = true
 -- vim.g.neoformat_verbose = 1
 
 
-lspconfig.pyright.setup{}
-lspconfig.lua_ls.setup({})
-lspconfig.marksman.setup{}
-lspconfig.cssls.setup{} -- vscode-css-languageserver
--- lspconfig.eslint.setup{}
+vim.lsp.enable('pyright')
+
+vim.lsp.enable('lua_ls')
+
+vim.lsp.enable('marksman')
+
+vim.lsp.enable('cssls')
+
 vim.lsp.enable('eslint')
+
+vim.lsp.enable('eslint-lsp')
+
 vim.lsp.enable('ts_ls')
-lspconfig.denols.setup{} -- deno
-lspconfig.html.setup{filetypes={"html", "htmldjango"}} -- vscode-html-languageserver
+
+vim.lsp.enable('biome')
+
+vim.lsp.enable('tsserver')
+
+vim.lsp.enable('denols') -- deno
+
+vim.lsp.enable('html')
 
 
 

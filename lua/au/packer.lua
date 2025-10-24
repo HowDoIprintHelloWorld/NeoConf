@@ -58,5 +58,14 @@ return require('packer').startup(function(use)
           'hrsh7th/cmp-buffer'
       }
   }
+
+  use({
+    "epwalsh/obsidian.nvim",
+    tag = "*",  -- recommended, use latest release instead of latest commit
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp"
+    },
+  })
 end)
 
